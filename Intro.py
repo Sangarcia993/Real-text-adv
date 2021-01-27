@@ -12,4 +12,4 @@ while i < 4:
 print("Great adventurer, what is your name?")
 name = input(">>> ")
 
-print("Great, it is an honor to wlcome you,", name, "to the city.\nI recomend you go to the caves to explore")
+print("Great, it is an honor to welcome you,", name + ", to the city.\nI recomend you go to the caves to explore.")
