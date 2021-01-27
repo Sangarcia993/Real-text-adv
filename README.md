@@ -9,5 +9,4 @@
      http://letstalkdata.com/2014/08/how-to-write-a-text-adventure-in-python/
  https://github.com/doublespeakgames/adarkroom
  
- -[] lol
  
