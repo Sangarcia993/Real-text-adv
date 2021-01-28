@@ -1,5 +1,6 @@
 import time
 
+
 print("Welcum to the city of Night")
 
 #creating suspense
