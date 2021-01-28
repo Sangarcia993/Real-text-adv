@@ -1,32 +1,43 @@
-import Intro
+#import Intro
 
 
 def Move():
     destination = input("where do you want to go\n>>> ")
-    f = open("location.txt", "r")
-    location = f.read()        
+    location = Filer("location.txt").reader()      
     if location == destination:
         print("You are already there!")
+
     elif destination == "cave":
         print("traveling to cave...")
         #borrando datos
-        f = open("location.txt", "r+")
-        f.truncate(0)
-        f.close()
+        Filer("location.txt").clean()        
         #escribiendo new location
-        f = open("location.txt", "a")
-        f.write("cave")
+        Filer("location.txt").writer("cave")
 
     elif destination == "city":
         print("traveling to city...")
         #borrando datos
-        f = open("location.txt", "r+")
+        Filer("location.txt").clean()
+        #escribiendo new location
+        Filer("location.txt").writer("city")
+        
+class Filer():
+    def __init__(self, p_file_name):
+        self.file_name = p_file_name
+    
+    def clean(self):
+        f = open(self.file_name, "r+")
         f.truncate(0)
         f.close()
-        #escribiendo new location
-        f = open("location.txt", "a")
-        f.write("city")
-        
+    
+    def writer(self, p_thing_to_write):
+        f = open(self.file_name, "a")
+        f.write(p_thing_to_write)
+    
+    def reader(self):
+        f = open(self.file_name, "r")
+        data = f.read()
+        return data
 
 def Actions(p_action):
     if p_action == "move":
@@ -37,14 +48,8 @@ def Actions(p_action):
         f.close()
         quit()
 
-class encounters():
-    def __init__(self):
-        pass
-
 
 while True:
     Actions(input("what do you whant to do [move]"))
-    #crea un function llamada "encaunters" la cual se llame despues de actions
-    #la variable encaunters
 
 
