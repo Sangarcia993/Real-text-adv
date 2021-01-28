@@ -1,4 +1,9 @@
 #import Intro
+import random
+from Cave import Bat
+from Player import Playerr
+
+P1 = Playerr()
 
 
 def Move():
@@ -43,13 +48,50 @@ def Actions(p_action):
     if p_action == "move":
         Move()
     elif p_action == "exit":
-        f = open("location.txt", "r+")
-        f.truncate(0)
-        f.close()
+        Filer("location.txt").clean()
         quit()
 
+def Battle(p_enemy, P1):
+    print("You have entered a battle with:", p_enemy.name)
+    while P1.hp > 0 and p_enemy.hp > 0:
+        choice = input("What do you do [atk, analyse]")
+        if choice == "atk":
+            p_enemy.hp -= P1.atk 
+            print("Enemy health remaining =", p_enemy.hp)
+            print("The enemy strikes back, it deals", p_enemy.atk)
+            P1.hp -= p_enemy.atk
+            print("Remaining health:", P1.hp)
 
-while True:
-    Actions(input("what do you whant to do [move]"))
+        if choice == "analyse":
+            print("You analyse the enemy and...")
+            p_enemy.getData()
+
+    #after battle ends
+    if P1.hp < 1:
+        P1.status = "Dead"
+    elif p_enemy.hp < 1:
+        print("you have won")
+        print("you gain", p_enemy.coins, "coins and", p_enemy.exp, "exp")
+        P1.coins += p_enemy.coins
+        P1.exp += p_enemy.exp
+        
+
+
+
+while P1.status == "Alive":
+    Actions(input("what do you whant to do [move, exit]"))
+    if Filer("location.txt").reader() == "city":
+        print("in da city")
+    else:
+        dice = random.randint(1, 100)
+        if dice < 1011:
+            bat1 = Bat()
+            Battle(bat1, P1)
+
+
+print("you dead")
+
+
+
 
 
