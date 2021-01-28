@@ -3,7 +3,7 @@ import time
 with open("location.txt", "a") as f:
     f.write("city\n")
 
-print("Welcum to the city of Night")
+print("Welcome to the city of Night")
 
 #creating suspense
 i = 1
