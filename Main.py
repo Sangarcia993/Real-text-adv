@@ -37,6 +37,11 @@ def Actions(p_action):
         f.close()
         quit()
 
+class encounters():
+    def __init__(self):
+        pass
+
+
 while True:
     Actions(input("what do you whant to do [move]"))
     #crea un function llamada "encaunters" la cual se llame despues de actions

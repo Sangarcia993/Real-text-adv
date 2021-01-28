@@ -1,9 +1,18 @@
 #https://programminghistorian.org/en/lessons/working-with-text-files
 
+import os
+
+with os.scandir('text-files/') as entries:
+    for entry in entries:
+        print(entry.name)
+
+
+"""
 # file-output.py
-f = open('Save.txt','a')
+f = open('text-fileslol.txt','a')
 f.write('hello world')
 f.close()
+
 
 #read and prints whats is in the file
 f = open("Save.txt", "r")
@@ -19,3 +28,4 @@ with open("Save.txt", "r+") as f:
     old = f.read() # read everything in the file
     f.seek(0) # rewind
     f.write("new line\n" + old) # write the new line before
+"""
