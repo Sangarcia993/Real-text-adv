@@ -7,7 +7,7 @@ class Bat():
         self.hp = 15 #random.randint(1, 15)
         self.name = "Bat"
         if self.hp > 10:
-            self.name +=  "Healthy"
+            self.name +=  " Healthy"
         
             
 bat1 = Bat()
