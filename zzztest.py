@@ -1,5 +1,9 @@
 #https://programminghistorian.org/en/lessons/working-with-text-files
 
+# BUEN EJEMPLO = https://github.com/Victoria-Hodder/pyladies-text-adventure
+
+# Anda a Github busca text adv y copia
+
 import os
 
 with os.scandir('text-files/') as entries:
