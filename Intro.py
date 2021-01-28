@@ -1,5 +1,7 @@
 import time
 
+f = open("location.txt", "a")
+f.write("city")
 
 print("Welcum to the city of Night")
 

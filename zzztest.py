@@ -1,7 +1,14 @@
+#https://programminghistorian.org/en/lessons/working-with-text-files
+
 # file-output.py
 f = open('Save.txt','a')
 f.write('hello world')
 f.close()
+
+#read and prints whats is in the file
+f = open("Save.txt", "r")
+file = f.read()
+print(file)
 
 #append a line to a text file
 with open("Save.txt", "a") as f:
