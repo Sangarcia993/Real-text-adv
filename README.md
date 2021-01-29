@@ -4,7 +4,7 @@
  
  
  
-# Su Inspiración (copy paste)
+# (copy paste)
  https://github.com/phillipjohnson/text-adventure-tut
  --> http://letstalkdata.com/2014/08/how-to-write-a-text-adventure-in-python/
  https://github.com/doublespeakgames/adarkroom
