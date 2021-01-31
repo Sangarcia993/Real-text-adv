@@ -6,4 +6,3 @@ class Playerr():
         self.coins = 0
         self.exp = 0
 
-P1 = Playerr()
