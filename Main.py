@@ -6,7 +6,6 @@ from City import Casino
 
 P1 = Playerr()
 Casino = Casino(P1.coins)
-print(Casino.wallet)
 
 def Move():
     destination = input("where do you want to go\n>>> ")

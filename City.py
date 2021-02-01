@@ -4,5 +4,8 @@ class Casino():
         self.wallet = p_player_coins
         self.card = 0
         self.debt = 0
+    
+    def RPS(sefl):
+        pass
 
     
