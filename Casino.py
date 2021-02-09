@@ -93,7 +93,7 @@ class Casino():
                         error = "lol"
                         int(error)
                 else:
-                    print("arregla esto")
+                    self.Betting()
             except:
                 if cchoice == "exit":
                     self.playing = False
@@ -124,7 +124,7 @@ Casino1 = Casino(100)
 Casino1.wallet /= Casino1.porcentage
 print(Casino1.wallet)
 """
-#Casino1.RPS()
+Casino1.RPS()
 
 
 """
