@@ -2,7 +2,7 @@
 import random
 from Cave import Bat
 from Player import Playerr
-from Casino import Casino
+from City.Casino import Casino
 
 P1 = Playerr()
 Casino = Casino(P1.coins)
