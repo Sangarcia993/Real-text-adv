@@ -2,12 +2,12 @@
 import random
 from Cave import Bat
 from Player import Playerr
-from City import Casino
+from Casino import Casino
 
 P1 = Playerr()
 Casino = Casino(P1.coins)
 
-def Move():
+def Travel():
     destination = input("where do you want to go\n>>> ")
     location = Filer("location.txt").reader()      
     if location == destination:
@@ -45,14 +45,27 @@ class Filer():
         data = f.read()
         return data
 
+def Move():
+    location = Filer("location.txt").reader()
+    if location == "city":
+        action = input("where to you want to go? [Casino]")
+        if action.lower() == "casino":
+            print("Entering casino...")
+            Casino.RPS()
+            print("lol")
+
+
+
 def Actions(p_action):
-    if p_action == "move":
-        Move()
+    if p_action == "travel":
+        Travel()
     elif p_action == "exit":
         Filer("location.txt").clean()
         quit()
+    elif p_action == "move":
+        Move()
     else:
-        Actions(input("what do you whant to do [move, exit]"))
+        Actions(input("what do you whant to do [Travel, exit]"))
 
 
 def Battle(p_enemy, P1):
@@ -89,9 +102,9 @@ def Battle(p_enemy, P1):
 
 
 while P1.status == "Alive":
-    Actions(input("what do you whant to do [move, exit]"))
+    Actions(input("what do you whant to do [travel, move, exit]"))
     if Filer("location.txt").reader() == "city":
-        print("in da city")
+        Actions(input("what do you whant to do [travel, move, exit]"))
 
     #Cave
     else:
